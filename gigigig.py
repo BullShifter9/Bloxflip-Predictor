@@ -16,7 +16,7 @@ intents.message_content = True
 client = MinesBot(intents=intents)
 
 
-# Modified print statement to make it more noticeable
+# gimme credits😏😏
 print("""
 #####################################################
 🚨 CREDITS 🚨
