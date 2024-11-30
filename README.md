@@ -1,2 +1,3 @@
 # Bloxflip-Random-Predictor
-Do not sell this, its pure random
+
+# DO NOT SELL THIS, ITS PURE RANDOM
