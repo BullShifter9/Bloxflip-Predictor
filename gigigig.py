@@ -2,21 +2,30 @@ import discord
 from discord import app_commands
 import random
 
-
 class MinesBot(discord.Client):
-    def __init__(self, *, intents: discord.Intents):
-        super().__init__(intents=intents)
-        self.tree = app_commands.CommandTree(self)
+   def __init__(self, *, intents: discord.Intents):
+       super().__init__(intents=intents)
+       self.tree = app_commands.CommandTree(self)
 
-    async def setup_hook(self):
-        await self.tree.sync()
+   async def setup_hook(self):
+       await self.tree.sync()
+       print(f"Successfully logged in as {self.user}")
+
+   async def on_ready(self):
+       for guild in self.guilds:
+           for channel in guild.text_channels:
+               if channel.permissions_for(guild.me).send_messages:
+                   await channel.send("@everyone successful online MADE BY BullShifter9")
+                   return
+       
+       print("No channel found to send startup message")
 
 intents = discord.Intents.default()
 intents.message_content = True
 client = MinesBot(intents=intents)
 
 
-# gimme credits😏😏
+
 print("""
 #####################################################
 🚨 CREDITS 🚨
