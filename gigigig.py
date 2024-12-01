@@ -96,7 +96,7 @@ async def mines(
         board[spot] = 1
 
     accuracy = random.randint(35, 60)
-    board_symbols = ["🟢" if x == 1 else "💥" for x in board]
+    board_symbols = ["✅" if x == 1 else "💣" for x in board]
     board_str = "\n".join("".join(map(str, board_symbols[i:i + 5])) for i in range(0, len(board), 5))
 
     used_round_ids.append(round_id)
